@@ -1,4 +1,4 @@
-FROM artifacts.mastercard.int/mcr-unstable/azul/zulu-openjdk:latest
+FROM adoptopenjdk/openjdk11:alpine-jre
 
 FROM maven:3.8.5-openjdk-11 AS maven_build
 
