@@ -1,6 +1,6 @@
 FROM adoptopenjdk/openjdk11:alpine-jre
 
-FROM maven:3.8-jdk-11 AS maven_build
+FROM maven:3.9-amazoncorretto-17 AS maven_build
 
 MAINTAINER mastercard.com
 RUN echo "PWD is: $PWD"
