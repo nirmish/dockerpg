@@ -11,6 +11,10 @@ COPY src /tmp/src/
 
 WORKDIR /tmp/
 
+RUN pwd
+
+RUN ls -l
+
 RUN mvn package
 
 COPY /tmp/target/nirmish-docker-app.jar nirmish-docker-app.jar
