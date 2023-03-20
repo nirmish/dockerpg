@@ -10,10 +10,10 @@ public class MyDemoController {
 
 	@GetMapping("/hello")
 	public String getMessage() {
-		return "From : My Demo App -- Weolcome!!!!";
+		return "From : Nirmish Demo App -- Weolcome!!!!";
 	}
 	@GetMapping("/bye")
 	public String getBye() {
-		return "From : My Demo App -- Bye Bye";
+		return "From : Nirmish Demo App -- Bye Bye";
 	}
 }
