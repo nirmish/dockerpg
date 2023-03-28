@@ -12,14 +12,14 @@
 
 FROM openjdk:11-slim-buster as build                         
 
-RUN chmod +x ./mvnw
+RUN chmod +x mvnw
 
 COPY .mvn .mvn                                               
 COPY mvnw .                                                  
 COPY pom.xml .                                               
 COPY src src                                                 
 
-RUN ./mvnw -B package                                        
+RUN mvnw -B package                                        
 
 FROM openjdk:11-jre-slim-buster   
 
