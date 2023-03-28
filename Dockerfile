@@ -13,6 +13,6 @@ WORKDIR /tmp/
 
 RUN mvn clean install
 
-COPY /tmp/target/nirmish-docker-app.jar nirmish-docker-app.jar
+COPY --from=maven_build /tmp/target/nirmish-docker-app.jar nirmish-docker-app.jar
 
 ENTRYPOINT ["java","-jar","nirmish-docker-app.jar"]
