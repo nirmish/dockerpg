@@ -10,17 +10,21 @@
 
 # RUN mvn clean install
 
-FROM openjdk:11-slim-buster as build                         
+#FROM openjdk:11-slim-buster as build                         
 
-COPY .mvn .mvn                                               
-COPY mvnw .                                                  
-COPY pom.xml .                                               
-COPY src src                                                 
+#COPY .mvn .mvn                                               
+#COPY mvnw .                                                  
+#COPY pom.xml .                                               
+#COPY src src                                                 
 
-RUN mvn package                                        
+FROM maven:3.9-amazoncorretto-17 AS maven_build
+WORKDIR /tmp/
+COPY pom.xml /tmp/
+COPY src /tmp/src/
+RUN mvn install                                        
 
-FROM openjdk:11-jre-slim-buster   
-
-COPY --from=build /target/nirmish-docker-app.jar .
+FROM adoptopenjdk/openjdk11:alpine-jre  
+WORKDIR /tmp/
+COPY --from=maven_build /tmp/target/nirmish-docker-app.jar .
 
 ENTRYPOINT ["java","-jar","nirmish-docker-app.jar"]
