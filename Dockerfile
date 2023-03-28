@@ -11,7 +11,7 @@ COPY src /tmp/src/
 
 WORKDIR /tmp/
 
-RUN mvn package
+RUN mvn clean install
 
 COPY /tmp/target/nirmish-docker-app.jar nirmish-docker-app.jar
 
