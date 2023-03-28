@@ -11,7 +11,7 @@
 # RUN mvn clean install
 
 FROM openjdk:11-slim-buster as build                         
-RUN chmod +x mvnw
+
 COPY .mvn .mvn                                               
 COPY mvnw .                                                  
 COPY pom.xml .                                               
