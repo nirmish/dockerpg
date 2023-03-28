@@ -1,4 +1,4 @@
-FROM maven:3.9-amazoncorretto-17 AS maven_build
+FROM maven:3.9-amazoncorretto-11 AS maven_build
 WORKDIR /tmp/
 COPY pom.xml /tmp/
 COPY src /tmp/src/
