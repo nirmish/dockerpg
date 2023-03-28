@@ -13,6 +13,6 @@ WORKDIR /tmp/
 
 RUN mvn package
 
-# COPY /tmp/target/nirmish-docker-app.jar nirmish-docker-app.jar
+COPY /tmp/target/nirmish-docker-app.jar nirmish-docker-app.jar
 
 ENTRYPOINT ["java","-jar","nirmish-docker-app.jar"]
